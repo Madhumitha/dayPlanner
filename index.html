@@ -20,6 +20,10 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>Work Day Scheduler</title>
+
+    <script defer src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   </head>
 
   <body>
@@ -28,12 +32,52 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
+    <div class="container mb-4">
       <!-- Timeblocks go here -->
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+      <div class="row">
+        <div id="text9" class="col-2 border text-center time"> 9:00 AM </div>
+        <textarea id="nine" class="col-8 border"></textarea>
+        <button type="button" class="col-1 btn btn-info border">Save</button>
+      </div>
+      <div class="row">
+          <div class="col-2 border text-center time"> 10:00 AM </div>
+          <textarea id="ten" class="col-8 border"></textarea>
+          <button type="button" class="col-1 btn btn-info border">Save</button>
+      </div>
+      <div class="row">
+            <div class="col-2 border text-center time"> 11:00 AM </div>
+            <textarea id="eleven" class="col-8 border"></textarea>
+            <button type="button" class="col-1 btn btn-info border">Save</button>
+      </div>
+      <div class="row">
+              <div class="col-2 border text-center time"> 12:00 PM </div>
+              <textarea id="twelve" class="col-8 border"></textarea>
+              <button type="button" class="col-1 btn btn-info border">Save</button>
+      </div>
+      <div class="row">
+                <div class="col-2 border text-center time"> 1:00 PM </div>
+                <textarea id="one" class="col-8 border"></textarea>
+                <button type="button" class="col-1 btn btn-info border">Save</button>
+      </div>
+      <div class="row">
+          <div class="col-2 border text-center time"> 2:00 PM </div>
+          <textarea id="two" class="col-8 border"></textarea>
+          <button type="button" class="col-1 btn btn-info border">Save</button>
+      </div>
+      <div class="row">
+          <div class="col-2 border text-center time"> 3:00 AM </div>
+          <textarea id="three" class="col-8 border"></textarea>
+          <button type="button" class="col-1 btn btn-info border">Save</button>
+      </div>
+      <div class="row">
+          <div class="col-2 border text-center time"> 4:00 AM </div>
+          <textarea id="four" class="col-8 border"></textarea>
+          <button type="button" class="col-1 btn btn-info border">Save</button>
+      </div>
+      <div class="row">
+          <div class="col-2 border text-center time"> 5:00 AM </div>
+          <textarea id="five" class="col-8 border"></textarea>
+          <button type="button" class="col-1 btn btn-info border">Save</button>
+      </div>
   </body>
 </html>
-© 2019 GitHub, Inc.
