@@ -1,6 +1,32 @@
+// Author: Madhumitha Prabakaran
+
 // Declare variables
 
 let timeNow = moment().format('dddd, MMMM Do YYYY');
+let hourNow = moment().format('h');
+let hourAndSuffix = moment().format('h a')
+console.log(hourAndSuffix);
+let hourNowInt = parseInt(hourNow);
+
+const hour1 = $('#time1').text();
+const hour2 = $('#time2').text();
+const hour3 = $('#time3').text();
+const hour4 = $('#time4').text();
+const hour5 = $('#time5').text();
+const hour6 = $('#time6').text();
+const hour7 = $('#time7').text();
+const hour8 = $('#time8').text();
+const hour9 = $('#time9').text();
+
+const hour1Int = parseInt(hour1);
+const hour2Int = parseInt(hour2);
+const hour3Int = parseInt(hour3);
+const hour4Int = parseInt(hour4);
+const hour5Int = parseInt(hour5);
+const hour6Int = parseInt(hour6);
+const hour7Int = parseInt(hour7);
+const hour8Int = parseInt(hour8);
+const hour9Int = parseInt(hour9);
 
 // Store user input in local Storage
 
@@ -9,7 +35,6 @@ $('#btn1').click(function() {
     localStorage.removeItem('text1');
   }
 
-  const hour1 = $('#time1').text();
   const hour1String = JSON.stringify(hour1);
   
   localStorage.setItem(hour1, $('#text1').val());
@@ -20,7 +45,6 @@ $('#btn2').click(function() {
     localStorage.removeItem('text2');
   }
 
-  const hour2 = $('#time2').text();
   const hour2String = JSON.stringify(hour2);
 
   localStorage.setItem(hour2, $('#text2').val());
@@ -31,7 +55,6 @@ $('#btn3').click(function() {
     localStorage.removeItem('text3');
   }
 
-  const hour3 = $('#time3').text();
   const hour3String = JSON.stringify(hour3);
 
   localStorage.setItem(hour3, $('#text3').val());
@@ -42,7 +65,6 @@ $('#btn4').click(function() {
     localStorage.removeItem('text4');
   }
 
-  const hour4 = $('#time4').text();
   const hour4String = JSON.stringify(hour4);
 
   localStorage.setItem(hour4, $('#text4').val());
@@ -53,7 +75,6 @@ $('#btn5').click(function() {
     localStorage.removeItem('text5');
   }
 
-  const hour5 = $('#time5').text();
   const hour5String = JSON.stringify(hour5);
 
   localStorage.setItem(hour5, $('#text5').val());
@@ -64,7 +85,6 @@ $('#btn6').click(function() {
     localStorage.removeItem('text6');
   }
 
-  const hour6 = $('#time6').text();
   const hour6String = JSON.stringify(hour6);
 
   localStorage.setItem(hour6, $('#text6').val());
@@ -75,7 +95,6 @@ $('#btn7').click(function() {
     localStorage.removeItem('text7');
   }
 
-  const hour7 = $('#time7').text();
   const hour7String = JSON.stringify(hour7);
 
   localStorage.setItem(hour7, $('#text7').val());
@@ -86,7 +105,6 @@ $('#btn8').click(function() {
     localStorage.removeItem('text8');
   }
 
-  const hour8 = $(hour8).text();
   const hour8String = JSON.stringify(hour8);
 
   localStorage.setItem("text8", $('#text8').val());
@@ -97,7 +115,6 @@ $('#btn9').click(function() {
     localStorage.removeItem('text9');
   }
 
-  const hour9 = $('#time9').text();
   const hour9String = JSON.stringify(hour9);
 
   localStorage.setItem(hour9, $('#text9').val());
@@ -107,3 +124,131 @@ $('#btn9').click(function() {
 // Display the time using moment.js
 
 $('#currentDay').append(timeNow);
+
+// Color coding to reflect whether the time slot is in the past, the present or the future 
+
+if(hour1Int > hourNowInt)
+{
+  $('#text1').css('background-color', 'lightgray');
+}
+else if(hour1Int == hourNowInt)
+{
+  $('#text1').css('background-color', '#FB8F78');
+}
+else if(hour1Int < hourNowInt)
+{
+  $('#text1').css('background-color', 'lightgreen');
+}
+
+
+if(hour2Int > hourNowInt)
+{
+  $('#text2').css('background-color', 'lightgray');
+}
+else if(hour2Int == hourNowInt)
+{
+  $('#text2').css('background-color', '#FB8F78');
+}
+else if(hour2Int < hourNowInt)
+{
+  $('#text2').css('background-color', 'lightgreen');
+}
+
+if(hour3Int > hourNowInt)
+{
+  $('#text3').css('background-color', 'lightgray');
+}
+else if(hour3Int == hourNowInt)
+{
+  $('#text3').css('background-color', '#FB8F78');
+}
+else
+{
+  $('#text3').css('background-color', 'lightgreen');
+}
+
+if(hour4 < timeNow)
+{
+  $('#text4').css('background-color', 'lightgray');
+}
+else if(hour4 == timeNow)
+{
+  $('#text4').css('background-color', '#FB8F78');
+}
+else
+{
+  $('#text4').css('background-color', 'lightgreen');
+}
+
+if(hour5 < timeNow)
+{
+  $('#text5').css('background-color', 'lightgray');
+}
+else if(hour5 == timeNow)
+{
+  $('#text5').css('background-color', '#FB8F78');
+}
+else
+{
+  $('#text5').css('background-color', 'lightgreen');
+}
+
+if(hour6Int < hourNowInt)
+{
+  $('#text6').css('background-color', 'lightgray');
+}
+else if(hour6Int === hourNowInt)
+{
+  $('#text6').css('background-color', '#FB8F78');
+}
+else if(hour6Int > hourNowInt)
+{
+  $('#text6').css('background-color', 'lightgreen');
+}
+
+if(hour7Int < hourNowInt)
+{
+  $('#text7').css('background-color', 'lightgray');
+}
+else if(hour7Int == hourNowInt)
+{
+  $('#text7').css('background-color', '#FB8F78');
+}
+else
+{
+  $('#text7').css('background-color', 'lightgreen');
+}
+
+if(hour8Int < hourNowInt)
+{
+  $('#text8').css('background-color', 'lightgray');
+}
+else if(hour8Int == hourNowInt)
+{
+  $('#text8').css('background-color', '#FB8F78');
+}
+else
+{
+  $('#text8').css('background-color', 'lightgreen');
+}
+
+if(hour9Int == hourNowInt)
+{
+  $('#text9').css('background-color', '#FB8F78');
+}
+else if(hour9Int > hourNowInt)
+{
+  $('#text9').css('background-color', 'lightgreen');
+}
+else
+{
+  $('#text9').css('background-color', 'lightgreen');
+}
+
+
+
+// Reset 
+
+if(((hourAndSuffix >= '5 pm') && (hourAndSuffix <= '11 pm')) && ((hourAndSuffix >= '12 am') && (hourAndSuffix <= '8 am'))) {
+  $('textarea').css('background-color', 'lightgreen');
+}
