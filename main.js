@@ -1,12 +1,6 @@
-//Set the variables
-let timeNow = new Date();
-let timeHour = timeNow.getHours();
-let suffix = (timeHour >= 12)? 'PM' : 'AM';
+// Declare variables
 
-function timeCalculation() {
-timeHour = (timeHour > 12)? timeHour - 12: timeHour;
-timeHour = (timeHour == "00")?12 : timeHour;
-}
+let timeNow = moment().format('dddd, MMMM Do YYYY');
 
 // Store user input in local Storage
 
@@ -109,3 +103,7 @@ $('#btn9').click(function() {
   localStorage.setItem(hour9, $('#text9').val());
 })
 
+
+// Display the time using moment.js
+
+$('#currentDay').append(timeNow);
