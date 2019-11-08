@@ -119,79 +119,116 @@ $('#btn9').click(function() {
   localStorage.setItem(hour9, $('#text9').val());
 })
 
-
 // Display the time using moment.js
 
 $('#currentDay').append(timeNow);
 
 // Color coding to reflect whether the time slot is in the past, the present or the future 
 
-if (hour1Int == hourNowInt) {
-  $('#text1').css('background-color', '#FB8F78');
-}
-else {
-  $('#text1').css('background-color', 'lightgray');
-}
+
+
+if(hourIn24 >= 9 || hourIn24 <= 17) {
+    if (hour1Int == hourNowInt) {
+      $('#text1').css('background-color', '#FB8F78');
+    }
+    else if ((hourNowInt >=1) && (hour1Int > hourNowInt)) {
+      $('#text1').css('background-color', 'lightgray');
+    }
+    else if((hourNowInt >=10) && (hour1Int < hourNowInt)) {
+      $('#text1').css('background-color', 'lightgray');
+    }
+
+    if (hour2Int == hourNowInt) {
+      $('#text2').css('background-color', '#FB8F78');
+    }
+    else if ((hourNowInt >=1) && (hour2Int > hourNowInt)) {
+      $('#text2').css('background-color', 'lightgray');
+    }
+    else if((hourNowInt > 10) && (hour2Int < hourNowInt)) {
+      $('#text2').css('background-color', 'lightgray');
+    }
+    else 
+    {
+      $('#text2').css('background-color', 'lightgreen');
+    }
+
+    if (hour3Int == hourNowInt) {
+      $('#text3').css('background-color', '#FB8F78');
+    }
+    else if ((hourNowInt >=1) && (hour3Int > hourNowInt)) {
+      $('#text3').css('background-color', 'lightgray');
+    }
+    else if((hourNowInt > 11) && (hour3Int < hourNowInt)) {
+      $('#text3').css('background-color', 'lightgray');
+    }
+    else {
+      $('#text3').css('background-color', 'lightgreen');
+    }
+
+    if (hour4Int == hourNowInt) {
+      $('#text4').css('background-color', '#FB8F78');
+    }
+    else if ((hourNowInt >=1) && (hour4Int > hourNowInt)) {
+      $('#text4').css('background-color', 'lightgray');
+    }
+    else {
+      $('#text4').css('background-color', 'lightgreen');
+    }
+
+    if (hour5Int == hourNowInt) {
+      $('#text5').css('background-color', '#FB8F78');
+    }
+    else if ((hourNowInt > 1) && (hour5Int < hourNowInt)) {
+      $('#text5').css('background-color', 'lightgray');
+    }
+    else {
+      $('#text5').css('background-color', 'lightgreen');
+    }
+
+    if (hour6Int == hourNowInt) {
+      $('#text6').css('background-color', '#FB8F78');
+    }
+    else if ((hourNowInt > 2) && (hour6Int < hourNowInt)) {
+      $('#text6').css('background-color', 'lightgray');
+    }
+    else {
+      $('#text6').css('background-color', 'lightgreen');
+    }
+
+    if (hour7Int == hourNowInt) {
+      $('#text7').css('background-color', '#FB8F78');
+    }
+    else if ((hourNowInt > 2) && (hour7Int < hourNowInt)) {
+      $('#text7').css('background-color', 'lightgray');
+    }
+    else {
+      $('#text7').css('background-color', 'lightgreen');
+    }
+
+    if (hour8Int == hourNowInt) {
+      $('#text8').css('background-color', '#FB8F78');
+    }
+    else if ((hourNowInt > 3) && (hour8Int < hourNowInt)) {
+      $('#text8').css('background-color', 'lightgray');
+    }
+    else {
+      $('#text8').css('background-color', 'lightgreen');
+    }
+
+    if (hour9Int == hourNowInt) {
+      $('#text9').css('background-color', '#FB8F78');
+    }
+    else if ((hourNowInt > 4) && (hour9Int < hourNowInt)) {
+      $('#text9').css('background-color', 'lightgray');
+    }
+    else {
+      $('#text9').css('background-color', 'lightgreen');
+    }
+  }
+
+  // Reset 
+
+  else {
+    $('textarea').css('background-color', 'pink');
+  }
   
-if(hour2Int == hourNowInt) {
-  $('#text2').css('background-color', '#FB8F78');
-}
-else {
-  $('#text2').css('background-color', 'lightgray');
-}
-
-if(hour3Int == hourNowInt) {
-  $('#text3').css('background-color', '#FB8F78');
-}
-else {
-  $('#text3').css('background-color', 'lightgray');
-}
-
-if(hour4Int == hourNowInt) {
-  $('#text4').css('background-color', '#FB8F78');
-}
-else {
-  $('#text4').css('background-color', 'lightgray');
-}
-
-if(hour5Int == hourNowInt) {
-  $('#text5').css('background-color', '#FB8F78');
-}
-else {
-  $('#text5').css('background-color', 'lightgray');
-}
-
-if(hour6Int == hourNowInt) {
-  $('#text6').css('background-color', '#FB8F78');
-}
-else {
-  $('#text6').css('background-color', 'lightgray');
-}
-
-if(hour7Int == hourNowInt) {
-  $('#text7').css('background-color', '#FB8F78');
-}
-else {
-  $('#text7').css('background-color', 'lightgray');
-}
-
-if(hour8Int == hourNowInt) {
-  $('#text8').css('background-color', '#FB8F78');
-}
-else {
-  $('#text8').css('background-color', 'lightgray');
-}
-
-if(hour9Int == hourNowInt) {
-  $('#text9').css('background-color', '#FB8F78');
-}
-else {
-  $('#text9').css('background-color', 'lightgray');
-}
-
-// Reset 
-
- if((hourIn24 >= 18) || (hourIn24 <= 9)) {
-  $('textarea').css('background-color', 'lightgreen');
-  $('textarea').val('');
-}
