@@ -37,6 +37,10 @@ WHEN the employee clicks the save button
 THEN events are saved in the timeblock for that hour
 ```
 
+### TODO
+
+1) Refactor the code (Use closures)
+
 
 
 
