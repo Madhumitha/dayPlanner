@@ -4,8 +4,7 @@
 
 let timeNow = moment().format('dddd, MMMM Do YYYY');
 let hourNow = moment().format('h');
-let hourAndSuffix = moment().format('h a')
-console.log(hourAndSuffix);
+let hourIn24= moment().format('HH')
 let hourNowInt = parseInt(hourNow);
 
 const hour1 = $('#time1').text();
@@ -127,128 +126,72 @@ $('#currentDay').append(timeNow);
 
 // Color coding to reflect whether the time slot is in the past, the present or the future 
 
-if(hour1Int > hourNowInt)
-{
-  $('#text1').css('background-color', 'lightgray');
-}
-else if(hour1Int == hourNowInt)
-{
+if (hour1Int == hourNowInt) {
   $('#text1').css('background-color', '#FB8F78');
 }
-else if(hour1Int < hourNowInt)
-{
-  $('#text1').css('background-color', 'lightgreen');
+else {
+  $('#text1').css('background-color', 'lightgray');
 }
-
-
-if(hour2Int > hourNowInt)
-{
-  $('#text2').css('background-color', 'lightgray');
-}
-else if(hour2Int == hourNowInt)
-{
+  
+if(hour2Int == hourNowInt) {
   $('#text2').css('background-color', '#FB8F78');
 }
-else if(hour2Int < hourNowInt)
-{
-  $('#text2').css('background-color', 'lightgreen');
+else {
+  $('#text2').css('background-color', 'lightgray');
 }
 
-if(hour3Int > hourNowInt)
-{
-  $('#text3').css('background-color', 'lightgray');
-}
-else if(hour3Int == hourNowInt)
-{
+if(hour3Int == hourNowInt) {
   $('#text3').css('background-color', '#FB8F78');
 }
-else
-{
-  $('#text3').css('background-color', 'lightgreen');
+else {
+  $('#text3').css('background-color', 'lightgray');
 }
 
-if(hour4 < timeNow)
-{
-  $('#text4').css('background-color', 'lightgray');
-}
-else if(hour4 == timeNow)
-{
+if(hour4Int == hourNowInt) {
   $('#text4').css('background-color', '#FB8F78');
 }
-else
-{
-  $('#text4').css('background-color', 'lightgreen');
+else {
+  $('#text4').css('background-color', 'lightgray');
 }
 
-if(hour5 < timeNow)
-{
-  $('#text5').css('background-color', 'lightgray');
-}
-else if(hour5 == timeNow)
-{
+if(hour5Int == hourNowInt) {
   $('#text5').css('background-color', '#FB8F78');
 }
-else
-{
-  $('#text5').css('background-color', 'lightgreen');
+else {
+  $('#text5').css('background-color', 'lightgray');
 }
 
-if(hour6Int < hourNowInt)
-{
-  $('#text6').css('background-color', 'lightgray');
-}
-else if(hour6Int === hourNowInt)
-{
+if(hour6Int == hourNowInt) {
   $('#text6').css('background-color', '#FB8F78');
 }
-else if(hour6Int > hourNowInt)
-{
-  $('#text6').css('background-color', 'lightgreen');
+else {
+  $('#text6').css('background-color', 'lightgray');
 }
 
-if(hour7Int < hourNowInt)
-{
-  $('#text7').css('background-color', 'lightgray');
-}
-else if(hour7Int == hourNowInt)
-{
+if(hour7Int == hourNowInt) {
   $('#text7').css('background-color', '#FB8F78');
 }
-else
-{
-  $('#text7').css('background-color', 'lightgreen');
+else {
+  $('#text7').css('background-color', 'lightgray');
 }
 
-if(hour8Int < hourNowInt)
-{
-  $('#text8').css('background-color', 'lightgray');
-}
-else if(hour8Int == hourNowInt)
-{
+if(hour8Int == hourNowInt) {
   $('#text8').css('background-color', '#FB8F78');
 }
-else
-{
-  $('#text8').css('background-color', 'lightgreen');
+else {
+  $('#text8').css('background-color', 'lightgray');
 }
 
-if(hour9Int == hourNowInt)
-{
+if(hour9Int == hourNowInt) {
   $('#text9').css('background-color', '#FB8F78');
 }
-else if(hour9Int > hourNowInt)
-{
-  $('#text9').css('background-color', 'lightgreen');
+else {
+  $('#text9').css('background-color', 'lightgray');
 }
-else
-{
-  $('#text9').css('background-color', 'lightgreen');
-}
-
-
 
 // Reset 
 
-if(((hourAndSuffix >= '5 pm') && (hourAndSuffix <= '11 pm')) && ((hourAndSuffix >= '12 am') && (hourAndSuffix <= '8 am'))) {
+ if((hourIn24 >= 18) || (hourIn24 <= 9)) {
   $('textarea').css('background-color', 'lightgreen');
+  $('textarea').val('');
 }
