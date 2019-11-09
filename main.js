@@ -4,7 +4,7 @@
 
 let timeNow = moment().format('dddd, MMMM Do YYYY');
 let hourNow = moment().format('h');
-let hourIn24= moment().format('HH')
+let hourNow24= parseInt(moment().format('HH'));
 let hourNowInt = parseInt(hourNow);
 let Timer;
 
@@ -131,107 +131,30 @@ colorCoding();
 function colorCoding() {
 
   TIMER = setInterval(colorCoding, 1000);
-  
-  if(hourIn24 >= 09 && hourIn24 <= 17) {
+  // Test check: hourNow24 = 20;
+  if(hourNow24 >= 9 && hourNow24 <= 17) {
 
-    if (hour1Int == hourNowInt) {
-      $('#text1').css('background-color', '#FB8F78');
-    }
-    else if ((hourNowInt >=1) && (hour1Int > hourNowInt)) {
-      $('#text1').css('background-color', 'lightgray');
-    }
-    else if((hourNowInt >=10) && (hour1Int < hourNowInt)) {
-      $('#text1').css('background-color', 'lightgray');
-    }
+    for (let i =1; i<=9 ; i++) { 
+     let hourInInt = parseInt($('#time'+i).text());
 
-    if (hour2Int == hourNowInt) {
-      $('#text2').css('background-color', '#FB8F78');
-    }
-    else if ((hourNowInt >=1) && (hour2Int > hourNowInt)) {
-      $('#text2').css('background-color', 'lightgray');
-    }
-    else if((hourNowInt > 10) && (hour2Int < hourNowInt)) {
-      $('#text2').css('background-color', 'lightgray');
-    }
-    else 
-    {
-      $('#text2').css('background-color', 'lightgreen');
+      if (hourInInt < 9) {
+        hourInInt = hourInInt + 12;
+      }
+      
+      if (hourInInt == hourNow24) {
+        $('#text'+i).css('background-color', '#FB8F78');
+        continue;
+      }
+      
+      if (hourInInt < hourNow24) {
+        $('#text'+i).css('background-color', 'lightgray');
+      } 
+      else {
+        $('#text'+i).css('background-color', 'lightgreen');
+      }
     }
 
-    if (hour3Int == hourNowInt) {
-      $('#text3').css('background-color', '#FB8F78');
-    }
-    else if ((hourNowInt >=1) && (hour3Int > hourNowInt)) {
-      $('#text3').css('background-color', 'lightgray');
-    }
-    else if((hourNowInt > 11) && (hour3Int < hourNowInt)) {
-      $('#text3').css('background-color', 'lightgray');
-    }
-    else {
-      $('#text3').css('background-color', 'lightgreen');
-    }
-
-    if (hour4Int == hourNowInt) {
-      $('#text4').css('background-color', '#FB8F78');
-    }
-    else if ((hourNowInt >=1) && (hour4Int > hourNowInt)) {
-      $('#text4').css('background-color', 'lightgray');
-    }
-    else {
-      $('#text4').css('background-color', 'lightgreen');
-    }
-
-    if (hour5Int == hourNowInt) {
-      $('#text5').css('background-color', '#FB8F78');
-    }
-    else if ((hourNowInt > 1) && (hour5Int < hourNowInt)) {
-      $('#text5').css('background-color', 'lightgray');
-    }
-    else {
-      $('#text5').css('background-color', 'lightgreen');
-    }
-
-    if (hour6Int == hourNowInt) {
-      $('#text6').css('background-color', '#FB8F78');
-    }
-    else if ((hourNowInt > 2) && (hour6Int < hourNowInt)) {
-      $('#text6').css('background-color', 'lightgray');
-    }
-    else {
-      $('#text6').css('background-color', 'lightgreen');
-    }
-
-    if (hour7Int == hourNowInt) {
-      $('#text7').css('background-color', '#FB8F78');
-    }
-    else if ((hourNowInt > 2) && (hour7Int < hourNowInt)) {
-      $('#text7').css('background-color', 'lightgray');
-    }
-    else {
-      $('#text7').css('background-color', 'lightgreen');
-    }
-
-    if (hour8Int == hourNowInt) {
-      $('#text8').css('background-color', '#FB8F78');
-    }
-    else if ((hourNowInt > 3) && (hour8Int < hourNowInt)) {
-      $('#text8').css('background-color', 'lightgray');
-    }
-    else {
-      $('#text8').css('background-color', 'lightgreen');
-    }
-
-    if (hour9Int == hourNowInt) {
-      $('#text9').css('background-color', '#FB8F78');
-    }
-    else if ((hourNowInt > 4) && (hour9Int < hourNowInt)) {
-      $('#text9').css('background-color', 'lightgray');
-    }
-    else {
-      $('#text9').css('background-color', 'lightgreen');
-    }
-  } 
-  
+  }
   else {
     clearInterval(TIMER);
     $('textarea').css('background-color', 'pink');
