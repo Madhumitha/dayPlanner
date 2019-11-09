@@ -6,6 +6,7 @@ let timeNow = moment().format('dddd, MMMM Do YYYY');
 let hourNow = moment().format('h');
 let hourIn24= moment().format('HH')
 let hourNowInt = parseInt(hourNow);
+let Timer;
 
 const hour1 = $('#time1').text();
 const hour2 = $('#time2').text();
@@ -125,9 +126,14 @@ $('#currentDay').append(timeNow);
 
 // Color coding to reflect whether the time slot is in the past, the present or the future 
 
+colorCoding();
 
+function colorCoding() {
 
-if(hourIn24 >= 9 || hourIn24 <= 17) {
+  TIMER = setInterval(colorCoding, 1000);
+  
+  if(hourIn24 >= 09 && hourIn24 <= 17) {
+
     if (hour1Int == hourNowInt) {
       $('#text1').css('background-color', '#FB8F78');
     }
@@ -224,11 +230,10 @@ if(hourIn24 >= 9 || hourIn24 <= 17) {
     else {
       $('#text9').css('background-color', 'lightgreen');
     }
-  }
-
-  // Reset 
-
+  } 
+  
   else {
+    clearInterval(TIMER);
     $('textarea').css('background-color', 'pink');
   }
-  
+}
